@@ -7,8 +7,7 @@ jobs:
       - image: node:latest
     steps:
       - checkout
-      - run: git update-index --chmod=+x ./deploy.sh
-      - run: ./deploy.sh
+      - run: echo "$(pwd)"
 
 # Orchestrate our job run sequence
 workflows:
