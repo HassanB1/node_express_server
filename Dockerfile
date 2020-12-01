@@ -16,4 +16,4 @@ RUN cd ${REACT_APP_DIR}/Node && npm install
 
 WORKDIR ${REACT_APP_DIR}/Node
 
-CMD pm2 start index.js
+CMD node index.js

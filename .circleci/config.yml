@@ -1,7 +1,17 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
+  aws-ecs: circleci/aws-ecs@1.4.0
+
+
+deploy:
+  name: Deploy to ECS
+  working_directory: ~/{GH-REPO}
+  steps:
+    - checkout
+    - run: ./deploy.sh
+
 workflows:
-  node-tests:
+  build-and-deploy:
     jobs:
-      - node/test
+      - deploy
