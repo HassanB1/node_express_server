@@ -1,17 +1,16 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
-  aws-ecs: circleci/aws-ecs@1.4.0
 
+# Define the jobs we want to run for this project
+jobs:
+  deploy:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - run: ./deploy.sh
 
-deploy:
-  name: Deploy to ECS
-  working_directory: ~/{GH-REPO}
-  steps:
-    - checkout
-    - run: ./deploy.sh
-
+# Orchestrate our job run sequence
 workflows:
-  build-and-deploy:
+  deployer:
     jobs:
       - deploy
