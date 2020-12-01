@@ -8,6 +8,7 @@ jobs:
     steps:
       - checkout
       - run: echo "$(pwd)"
+      - run: cd ./${CIRCLE_PROJECT_REPONAME}
 
 # Orchestrate our job run sequence
 workflows:
