@@ -4,7 +4,7 @@ version: 2.1
 jobs:
   deploy:
     docker:
-      - image: node:latest
+      - image: alpine
     steps:
       - checkout
       - run: echo "$(pwd)"
