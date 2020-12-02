@@ -9,7 +9,8 @@ jobs:
       - checkout
       - run: echo "$(pwd)"
       - run: ls -la
-      - run: ssh -i"test_ec2_linux.pem" ubuntu@ec2-34-211-44-48.us-west-2.compute.amazonaws.com
+      - run: ssh -i "test_ec2_linux.pem" ubuntu@ec2-52-27-176-232.us-west-2.compute.amazonaws.com
+      - run: ls -la
 
 # Orchestrate our job run sequence
 workflows:
