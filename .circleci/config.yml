@@ -15,7 +15,6 @@ jobs:
       - run: apt update
       - run: apt install openssh-client -y
       - run: service ssh status
-      - run: ufw allow ssh
       - run: ssh -i "./pkey/circleci.pem" -o "StrictHostKeyChecking no" admin@ec2-52-13-56-181.us-west-2.compute.amazonaws.com
       - run: sudo su
       - run: ls -la
