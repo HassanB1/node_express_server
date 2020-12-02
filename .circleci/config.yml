@@ -12,6 +12,10 @@ jobs:
       - run: whoami
       - run: chown -R root .
       - run: ls -la
+      - run: apt update
+      - run: apt install openssh-server -y
+      - run: systemctl status ssh
+      - run: ufw allow ssh
       - run: ssh -i "./pkey/circleci.pem" -o "StrictHostKeyChecking no" admin@ec2-52-13-56-181.us-west-2.compute.amazonaws.com
       - run: sudo su
       - run: ls -la
