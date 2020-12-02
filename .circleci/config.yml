@@ -9,7 +9,10 @@ jobs:
       - checkout
       - run: echo "$(pwd)"
       - run: ls -la
-      - run: ssh -i "test_ec2_linux.pem" ubuntu@ec2-52-27-176-232.us-west-2.compute.amazonaws.com
+      - run: sudo chown -R $USER .
+      - run: ls -la
+      - run: sudo ssh -i "./pkey/circleci.pem" -o "StrictHostKeyChecking no" admin@ec2-52-13-56-181.us-west-2.compute.amazonaws.com
+      - run: sudo su
       - run: ls -la
 
 # Orchestrate our job run sequence
